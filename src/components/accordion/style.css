@@ -1,0 +1,29 @@
+.acc-container {
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 80%;
+    margin: 0px 10%;
+    overflow: hidden;
+}
+
+.acc-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.acc-heading h1 {
+    margin: 0px;
+}
+
+.acc-body {
+    max-height: 0px;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.acc-body.open {
+    max-height: 500px;
+    transition: max-height 0.3s ease-in-out;
+}
+.acc-state {
+
+}
