@@ -1,24 +1,22 @@
+import React from 'react';
 import { useState } from 'react';
+import BodyView from '../user/body-view';
+import UserHeading from '../user/heading';
 import './style.css';
 
-type accordionProps = {
-    children: JSX.Element
-};
 
-const Accordion = (props: accordionProps) => {
-    const {children} = props;
+const UserAccordion = () => {
     const [isOpen, setIsOpen] = useState(true);
     return (
         <div className='acc-container'>
-            <div className='acc-heading'>
-                <h1>Heading</h1>
-                <div className='acc-state' onClick={() => {setIsOpen(!isOpen)}}>{isOpen ? 'CLOSE': 'OPEN'}</div>
+            <div onClick={() => {setIsOpen(!isOpen)}} className='acc-heading'>
+                <UserHeading />
             </div>
             <div className={`acc-body ${isOpen ? 'open': ''}`}>
-                {children}
+                <BodyView />
             </div>
         </div>
     )
 }
 
-export default Accordion;
+export default UserAccordion;
