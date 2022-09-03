@@ -1,7 +1,7 @@
 import './App.css';
 import Heading from './components/heading';
 import StatefulComponent from './components/stateful-component';
-import UserDetails from './components/user-details';
+import UserDetails from './components/user-screen';
 
 
 function App() {

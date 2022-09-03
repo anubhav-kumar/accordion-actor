@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import BodyEditView from '../user/body-edit-view';
-import UserHeading from '../user/heading';
+import BodyEditView from './user/body-edit-view';
+import UserHeading from './user/heading';
 import './style.css';
 
 type userData = {

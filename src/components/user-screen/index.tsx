@@ -1,6 +1,6 @@
 import { useState } from "react"
 import data from "../../data/celebrities"
-import UserAccordion from "../accordion"
+import UserAccordion from "../user-accordion"
 
 const UserDetails = () => {
     const [localData, setLocalData] = useState(data);
