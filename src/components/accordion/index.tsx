@@ -1,6 +1,5 @@
-import React from 'react';
 import { useState } from 'react';
-import BodyView from '../user/body-view';
+import BodyEditView from '../user/body-edit-view';
 import UserHeading from '../user/heading';
 import './style.css';
 
@@ -13,7 +12,7 @@ const UserAccordion = () => {
                 <UserHeading />
             </div>
             <div className={`acc-body ${isOpen ? 'open': ''}`}>
-                <BodyView />
+                <BodyEditView isEditMode />
             </div>
         </div>
     )

@@ -41,12 +41,31 @@
 
 .body-kv-key {
     color: gray;
+    margin: 5px 0px;
     font-size: 14px;
 }
 
 .body-kv-value {
     color: black;
     font-size: 12px;
+}
+
+.body-details {
+    padding: 20px 0px;
+    text-align: left;
+}
+
+.body-details p {
+    margin: 0px;
+}
+
+.body-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.body-actions button {
+    margin: 0px 5px;
 }
 
 @media only screen and (orientation: portrait) {

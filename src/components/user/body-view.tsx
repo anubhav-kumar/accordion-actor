@@ -17,6 +17,14 @@ const BodyView = () => {
                     <div className='body-kv-value'>India</div>
                 </div>
             </div>
+            <div className='body-details'>
+                <div className='body-kv-key'>Description</div>
+                <p className='body-kv-value'>Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. </p>
+            </div>
+            <div className='body-actions'>
+                <button>Delete</button>
+                <button>Edit</button>
+            </div>
         </div>
     )
 }
