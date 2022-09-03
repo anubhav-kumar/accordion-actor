@@ -1,16 +1,30 @@
 import './style.css';
 
-const BodyEdit = () => {
+type bodyEditViewPropType = {
+    isEditMode: boolean
+    id: number,
+    first: string,
+    last: string,
+    dob: string,
+    gender: string,
+    email: string,
+    picture: string,
+    country: string,
+    description: string
+};
+
+const BodyEdit = (props: bodyEditViewPropType) => {
+    const {dob, gender, country, description} = props;
     return (
         <div className='body-container'>
             <div className='body-info'>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Age</div>
-                    <input defaultValue={23} type='number' className='body-kv-value'/>
+                    <input defaultValue={dob} type='number' className='body-kv-value'/>
                 </div>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Gender</div>
-                    <select value="male">
+                    <select value={gender}>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="prefer-not-to-say">Prefer Not To say</option>
@@ -18,12 +32,12 @@ const BodyEdit = () => {
                 </div>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Country</div>
-                    <input type='string' defaultValue='India' className='body-kv-value' />
+                    <input type='string' defaultValue={country} className='body-kv-value' />
                 </div>
             </div>
             <div className='body-details'>
                 <div className='body-kv-key'>Description</div>
-                <textarea style={{width: '100%', height: '150px'}} className='body-kv-value' defaultValue='Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. Lorem Ipsum is a dummy text. '/>
+                <textarea style={{width: '100%', height: '150px'}} className='body-kv-value' defaultValue={description} />
             </div>
             <div className='body-actions'>
                 <button>Save</button>
