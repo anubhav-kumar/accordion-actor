@@ -5,7 +5,7 @@ import './style.css';
 import { userAccordion, userHeading } from '../../data-types';
 
 const UserAccordion = (props: userAccordion) => {
-    const {first, last, picture, updateData, deleteIndex, dataIndex} = props;
+    const {first, last, picture, updateData, deleteIndex, dataIndex, isEditable} = props;
     const [isOpen, setIsOpen] = useState(false);
     const [isEditMode, setEditMode] = useState(false);
     const [accordionLevelData, setAccordionLevelData] = useState({first, last});
@@ -37,7 +37,7 @@ const UserAccordion = (props: userAccordion) => {
                 : (
                     <div className='body-actions'>
                         <button onClick={() => deleteIndex(dataIndex)}>Delete</button>
-                        <button onClick={() => {setEditMode(true)}}>Edit</button>
+                        {isEditable && (<button onClick={() => {setEditMode(true)}}>Edit</button>)}
                     </div>
                 )
             }

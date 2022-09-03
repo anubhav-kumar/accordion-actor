@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { userAccordion } from "../../data-types";
 import data from "../../data/celebrities"
+import { transformInputData } from "../../utils/common";
 import UserAccordion from "../user-accordion"
 
 const UserDetails = () => {
-    const [localData, setLocalData] = useState(data);
+    const transformedData = data.map(singleRow => transformInputData(singleRow));
+    const [localData, setLocalData] = useState(transformedData);
     const updateLocalState = (updatedData: userAccordion) => {
         const {dataIndex} = updatedData;
         const localDataCopy = [...localData];

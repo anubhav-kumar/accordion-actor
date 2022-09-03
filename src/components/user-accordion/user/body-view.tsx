@@ -2,13 +2,13 @@ import { userDetailsEditProps } from '../../../data-types';
 import './style.css';
 
 const BodyView = (props: userDetailsEditProps) => {
-    const {dob, gender, country, description} = props;
+    const {age, gender, country, description} = props;
     return (
         <div className='body-container'>
             <div className='body-info'>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Age</div>
-                    <div className='body-kv-value'>{dob}</div>
+                    <div className='body-kv-value'>{age}</div>
                 </div>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Gender</div>

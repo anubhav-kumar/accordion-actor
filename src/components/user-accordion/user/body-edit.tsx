@@ -4,7 +4,7 @@ import './style.css';
 
 
 const BodyEdit = (props: userDetailsEditProps) => {
-    const {dob, gender, country, description, updateData} = props;
+    const {age, gender, country, description, updateData} = props;
     const [genderDropdownValue, setGenderDropDownValue] = useState(gender);    
     const onNameUpdation = (event: any, fieldName: string) => {
         const value = event.target.value;
@@ -16,7 +16,7 @@ const BodyEdit = (props: userDetailsEditProps) => {
             <div className='body-info'>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Age</div>
-                    <div className='body-kv-value'>{dob}</div>
+                    <div className='body-kv-value'>{age}</div>
                 </div>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Gender</div>
