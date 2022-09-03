@@ -1,0 +1,10 @@
+.button-series {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button-series p,
+.button-series button {
+    margin: 5px 5px;
+}
