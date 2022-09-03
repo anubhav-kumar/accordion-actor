@@ -16,7 +16,7 @@ type userData = {
 }
 
 const UserAccordion = (props: userData) => {
-    const {first, last, picture, dob, gender, email, country, description, id} = props;
+    const {first, last, picture} = props;
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className='acc-container'>

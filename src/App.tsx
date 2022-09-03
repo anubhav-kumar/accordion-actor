@@ -1,8 +1,7 @@
 import './App.css';
-import UserAccordion from './components/accordion';
 import Heading from './components/heading';
 import StatefulComponent from './components/stateful-component';
-import data from './data/celebrities';
+import UserDetails from './components/user-details';
 
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
       <Heading heading='Anubhav Kumar' subHeading='Senior Software Developer, Dreamsetgo' />
       <StatefulComponent initialNumber={10} />
       <StatefulComponent initialNumber={0} />
-      {data.map((dt, idx) => <UserAccordion {...dt} />)}
+      <UserDetails />
     </div>
   );
 }
