@@ -21,7 +21,7 @@ const UserAccordion = (props: userData) => {
     return (
         <div className='acc-container'>
             <div onClick={() => {setIsOpen(!isOpen)}} className='acc-heading'>
-                <UserHeading firstName={first} lastName={last} picture={picture}/>
+                <UserHeading firstName={first} lastName={last} picture={picture} isOpen={isOpen}/>
             </div>
             <div className={`acc-body ${isOpen ? 'open': ''}`}>
                 <BodyEditView isEditMode={false} {...props}/>
