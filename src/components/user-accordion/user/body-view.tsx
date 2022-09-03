@@ -1,19 +1,7 @@
+import { userDetailsEditProps } from '../../../data-types';
 import './style.css';
 
-type bodyEditViewPropType = {
-    isEditMode: boolean
-    id: number,
-    first: string,
-    last: string,
-    dob: string,
-    gender: string,
-    email: string,
-    picture: string,
-    country: string,
-    description: string
-};
-
-const BodyView = (props: bodyEditViewPropType) => {
+const BodyView = (props: userDetailsEditProps) => {
     const {dob, gender, country, description} = props;
     return (
         <div className='body-container'>
@@ -34,10 +22,6 @@ const BodyView = (props: bodyEditViewPropType) => {
             <div className='body-details'>
                 <div className='body-kv-key'>Description</div>
                 <p className='body-kv-value'>{description}</p>
-            </div>
-            <div className='body-actions'>
-                <button>Delete</button>
-                <button>Edit</button>
             </div>
         </div>
     )
