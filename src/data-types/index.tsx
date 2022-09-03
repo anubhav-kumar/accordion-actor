@@ -56,3 +56,10 @@ export interface userDetailsEditProps extends userDetails {
     isEditMode: boolean,
     updateData: Function
 }
+
+export type confirmAlertProps = {
+    title: string,
+    isOpen: boolean,
+    onConfirmFn: Function,
+    onDenyFn: Function
+}
