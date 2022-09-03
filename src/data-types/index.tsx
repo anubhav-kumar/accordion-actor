@@ -27,6 +27,5 @@ export interface userHeadingProps extends userHeading {
 
 export interface userDetailsEditProps extends userDetails {
     isEditMode: boolean,
-    isOpen: boolean,
     updateData: Function
 }

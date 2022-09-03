@@ -1,9 +1,16 @@
+import { useState } from 'react';
 import { userDetailsEditProps } from '../../../data-types';
 import './style.css';
 
 
 const BodyEdit = (props: userDetailsEditProps) => {
-    const {dob, gender, country, description} = props;
+    const {dob, gender, country, description, updateData} = props;
+    const [genderDropdownValue, setGenderDropDownValue] = useState(gender);    
+    const onNameUpdation = (event: any, fieldName: string) => {
+        const value = event.target.value;
+        updateData({[fieldName]: value})
+        setGenderDropDownValue(value);
+    }
     return (
         <div className='body-container'>
             <div className='body-info'>
@@ -13,7 +20,7 @@ const BodyEdit = (props: userDetailsEditProps) => {
                 </div>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Gender</div>
-                    <select value={gender}>
+                    <select onChange={event => {onNameUpdation(event, 'gender')}} value={genderDropdownValue}>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="prefer-not-to-say">Prefer Not To say</option>
@@ -21,12 +28,12 @@ const BodyEdit = (props: userDetailsEditProps) => {
                 </div>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Country</div>
-                    <input type='string' defaultValue={country} className='body-kv-value' />
+                    <input onChange={event => onNameUpdation(event, 'country')} type='string' defaultValue={country} className='body-kv-value' />
                 </div>
             </div>
             <div className='body-details'>
                 <div className='body-kv-key'>Description</div>
-                <textarea style={{width: '100%', height: '150px'}} className='body-kv-value' defaultValue={description} />
+                <textarea onChange={event => onNameUpdation(event, 'description')} style={{width: '100%', height: '150px'}} className='body-kv-value' defaultValue={description} />
             </div>
         </div>
     )

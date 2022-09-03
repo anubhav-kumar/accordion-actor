@@ -4,8 +4,8 @@ import BodyView from "./body-view";
 
 
 const BodyEditView = (props: userDetailsEditProps) => {
-    const {isEditMode} = props;
-    return isEditMode ? <BodyEdit {...props} /> : <BodyView {...props}/> ;
+    const {isEditMode, updateData} = props;
+    return isEditMode ? <BodyEdit {...props} updateData={updateData}/> : <BodyView {...props}/> ;
 }
 
 export default BodyEditView;

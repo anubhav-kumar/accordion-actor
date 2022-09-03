@@ -11,8 +11,8 @@ const UserAccordion = (props: userAccordion) => {
     const [accordionLevelData, setAccordionLevelData] = useState({first, last});
     const updateAccordionLevelData = (newData: userHeading) => {
         setAccordionLevelData({
-            first: newData.first,
-            last: newData.last
+            ...accordionLevelData,
+            ...newData
         });
     }
     const onSaveClick = () => {
@@ -25,7 +25,7 @@ const UserAccordion = (props: userAccordion) => {
                 <UserHeading first={first} last={last} picture={picture} isOpen={isOpen} isEditMode={isEditMode} updateData={updateAccordionLevelData} />
             </div>
             <div className={`acc-body ${isOpen ? 'open': ''}`}>
-                <BodyEditView id={0} isEditMode={isEditMode} {...props}/>
+                <BodyEditView isEditMode={isEditMode} {...props} updateData={updateAccordionLevelData}/>
             </div>
             {isEditMode 
                 ? (
