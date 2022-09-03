@@ -1,0 +1,77 @@
+.userheading-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.userheading-image-name {
+    display: flex;
+}
+
+.userheading-image {
+    height: 75px;
+    width: 75px;
+    background-repeat: round;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.userheading-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.userheading-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.body-container {
+    padding: 10px;
+}
+
+.body-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0px;
+}
+
+.body-kv-key {
+    color: gray;
+    margin: 5px 0px;
+    font-size: 14px;
+}
+
+.body-kv-value {
+    color: black;
+    font-size: 12px;
+}
+
+.body-details {
+    padding: 20px 0px;
+    text-align: left;
+}
+
+.body-details p {
+    margin: 0px;
+}
+
+.body-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.body-actions button {
+    margin: 0px 5px;
+}
+
+@media only screen and (orientation: portrait) {
+    .userheading-image {
+        height: 40px;
+        width: 40px;
+        margin: 5px;
+    }
+}
