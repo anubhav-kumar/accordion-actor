@@ -6,6 +6,7 @@ import ConfirmAlert from "../confirmation-alert";
 import UserAccordion from "../user-accordion"
 
 const UserDetails = () => {
+    const [searchTerm, setSearchTerm] = useState('');
     const transformedData = data.map(singleRow => transformInputData(singleRow));
     const [localData, setLocalData] = useState(transformedData);
     const [isConfirmAlert, setIsConfirmAlert] = useState(false);
@@ -31,15 +32,21 @@ const UserDetails = () => {
         setDeleteIndexSelected(-1);
         setIsConfirmAlert(false);
     }
-    if (localData && localData.length > 0) {
-        return (
-            <>
-                <ConfirmAlert title={"Are you sure you wanna delete the User ?"} isOpen={isConfirmAlert} onConfirmFn={deleteIndex} onDenyFn={() => {setIsConfirmAlert(false)}} />
-                {localData.map((dt, idx) => {return <UserAccordion deleteIndex={openDeleteConfirmModal} isOpen={false} updateData={updateLocalState} key={`idx-${idx}`} {...dt} dataIndex={idx} />})}
-            </>
-        )
-    }
-    return null;
+    const filteredData = localData.filter(
+        dt => {return searchTerm 
+            ? (dt.first.includes(searchTerm) || dt.last.includes(searchTerm) || dt.description.includes(searchTerm))
+            : true}
+        );
+    
+    return (
+        <>
+            <input onChange={event => {setSearchTerm(event.target.value)}} />
+            <ConfirmAlert title={"Are you sure you wanna delete the User ?"} isOpen={isConfirmAlert} onConfirmFn={deleteIndex} onDenyFn={() => {setIsConfirmAlert(false)}} />
+            {filteredData.map((dt, idx) => {return <UserAccordion deleteIndex={openDeleteConfirmModal} isOpen={false} updateData={updateLocalState} key={`idx-${idx}`} {...dt} dataIndex={idx} />})}
+        </>
+    )
+    
+    
 }
 
 export default UserDetails;

@@ -8,7 +8,7 @@ const UserAccordion = (props: userAccordion) => {
     const {first, last, picture, updateData, deleteIndex, dataIndex, isEditable} = props;
     const [isOpen, setIsOpen] = useState(false);
     const [isEditMode, setEditMode] = useState(false);
-    const [accordionLevelData, setAccordionLevelData] = useState({first, last});
+    const [accordionLevelData, setAccordionLevelData] = useState({});
     const updateAccordionLevelData = (newData: userHeading) => {
         setAccordionLevelData({
             ...accordionLevelData,
