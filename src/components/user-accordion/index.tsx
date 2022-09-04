@@ -3,6 +3,8 @@ import BodyEditView from './user/body-edit-view';
 import UserHeading from './user/heading';
 import './style.css';
 import { userAccordion, userHeading } from '../../data-types';
+import Icon from '../icons';
+
 
 const UserAccordion = (props: userAccordion) => {
     const {first, last, picture, updateData, deleteIndex, dataIndex, isEditable} = props;
@@ -30,14 +32,14 @@ const UserAccordion = (props: userAccordion) => {
             {isEditMode 
                 ? (
                     <div className='body-actions'>
-                        <button onClick={onSaveClick}>Save</button>
-                        <button onClick={() => {setEditMode(false)}}>Close</button>
+                        <div onClick={onSaveClick}><Icon name='save'/></div>
+                        <div onClick={() => {setEditMode(false)}}><Icon name='cancel'/></div>
                     </div>
                 ) 
                 : (
                     <div className='body-actions'>
-                        <button onClick={() => deleteIndex(dataIndex)}>Delete</button>
-                        {isEditable && (<button onClick={() => {setEditMode(true)}}>Edit</button>)}
+                        <div onClick={() => deleteIndex(dataIndex)}><Icon name='delete' /></div>
+                        {isEditable && (<div onClick={() => {setEditMode(true)}}><Icon name='edit' /></div>)}
                     </div>
                 )
             }

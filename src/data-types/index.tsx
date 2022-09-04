@@ -63,3 +63,7 @@ export type confirmAlertProps = {
     onConfirmFn: Function,
     onDenyFn: Function
 }
+
+export type iconProps = {
+    name: string
+}
