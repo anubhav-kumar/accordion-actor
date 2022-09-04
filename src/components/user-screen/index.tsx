@@ -51,7 +51,7 @@ const UserDetails = () => {
      
     return (
         <>
-            <input onChange={event => {setSearchTerm(event.target.value)}} />
+            <input placeholder="Search Here" style={{width: '80%'}} onChange={event => {setSearchTerm(event.target.value)}} />
             <ConfirmAlert title={"Are you sure you wanna delete the User ?"} isOpen={isConfirmAlert} onConfirmFn={deleteIndex} onDenyFn={() => {setIsConfirmAlert(false)}} />
             {filteredData.map((dt, idx) => {return <UserAccordion setExpansionLock={setExpansionLock} expandCollapse={expandCollapse} isExpanded={idx === expandedAccordionIndex} deleteIndex={openDeleteConfirmModal} isOpen={false} updateData={updateLocalState} key={`idx-${idx}`} {...dt} dataIndex={idx} />})}
         </>
