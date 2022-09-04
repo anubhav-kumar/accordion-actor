@@ -29,4 +29,12 @@ export const transformInputData = (input: inputDataType) => {
 
 export function capitalizeFirstLetter(str: string) {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-  }
+}
+
+export const isEmptyObj = (obj: Object) => {
+    if (obj) {
+        return Object.keys(obj).length === 0;
+    }
+    return true;
+}
+
