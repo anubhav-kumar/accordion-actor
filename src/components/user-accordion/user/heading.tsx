@@ -1,4 +1,5 @@
 import { userHeadingProps } from '../../../data-types';
+import Icon from '../../icons';
 import './style.css';
 
 
@@ -15,7 +16,9 @@ const UserHeading = (props: userHeadingProps) => {
                 <div className='userheading-image' style={{backgroundImage: `url('${picture}')`}} />
                 {isEditMode ? <input onChange={onNameUpdation} type={'text'} defaultValue={`${first} ${last}`} />: <div className='userheading-name'>{`${first} ${last}`}</div>}
             </div>
-            <div className='userheading-toggle'>{isOpen ? "Close" : "Open"}</div>
+            <div className='userheading-toggle'>
+                <Icon name={isOpen ? 'upArrow': 'downArrow'}/>
+            </div>
         </div>
     );
 }

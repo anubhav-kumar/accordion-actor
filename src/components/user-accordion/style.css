@@ -2,8 +2,10 @@
     border: 1px solid black;
     border-radius: 4px;
     width: 80%;
-    margin: 10px 10%;
+    margin: 15px 10%;
     overflow: hidden;
+    box-shadow: 5px 5px lightgrey;
+    padding: 10px;
 }
 
 .acc-heading {
