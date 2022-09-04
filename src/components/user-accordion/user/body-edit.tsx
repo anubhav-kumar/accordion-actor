@@ -23,7 +23,7 @@ const BodyEdit = (props: userDetailsEditProps) => {
                     <select onChange={event => {onNameUpdation(event, 'gender')}} value={genderDropdownValue}>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
-                        <option value="prefer-not-to-say">Prefer Not To say</option>
+                        <option value="Prefer Not To say">Prefer Not To say</option>
                     </select>
                 </div>
                 <div className='body-info-kv'>
