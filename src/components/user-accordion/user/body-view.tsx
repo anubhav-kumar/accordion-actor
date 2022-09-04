@@ -1,4 +1,5 @@
 import { userDetailsEditProps } from '../../../data-types';
+import { capitalizeFirstLetter } from '../../../utils/common';
 import './style.css';
 
 const BodyView = (props: userDetailsEditProps) => {
@@ -12,7 +13,7 @@ const BodyView = (props: userDetailsEditProps) => {
                 </div>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Gender</div>
-                    <div className='body-kv-value'>{gender}</div>
+                    <div className='body-kv-value'>{capitalizeFirstLetter(gender)}</div>
                 </div>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Country</div>

@@ -14,7 +14,7 @@ const UserHeading = (props: userHeadingProps) => {
         <div className='userheading-container'>
             <div className='userheading-image-name'>
                 <div className='userheading-image' style={{backgroundImage: `url('${picture}')`}} />
-                {isEditMode ? <input onChange={onNameUpdation} type={'text'} defaultValue={`${first} ${last}`} />: <div className='userheading-name'>{`${first} ${last}`}</div>}
+                {isEditMode ? <input onClick={ev => ev.stopPropagation()} onChange={onNameUpdation} type={'text'} defaultValue={`${first} ${last}`} />: <div className='userheading-name'>{`${first} ${last}`}</div>}
             </div>
             <div className='userheading-toggle'>
                 <Icon name={isOpen ? 'upArrow': 'downArrow'}/>
