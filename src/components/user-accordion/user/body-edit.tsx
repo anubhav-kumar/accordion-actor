@@ -16,13 +16,15 @@ const BodyEdit = (props: userDetailsEditProps) => {
             <div className='body-info'>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Age</div>
-                    <div className='body-kv-value'>{age}</div>
+                    <input onChange={event => onNameUpdation(event, 'age')} type='number' defaultValue={age} className='body-kv-value' />
                 </div>
                 <div className='body-info-kv'>
                     <div className='body-kv-key'>Gender</div>
                     <select onChange={event => {onNameUpdation(event, 'gender')}} value={genderDropdownValue}>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
+                        <option value="transgender">Transgender</option>
+                        <option value="other">Other</option>
                         <option value="Prefer Not To say">Prefer Not To say</option>
                     </select>
                 </div>

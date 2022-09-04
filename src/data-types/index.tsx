@@ -43,7 +43,10 @@ export interface userAccordion extends userDetails {
     updateData: Function,
     dataIndex: number,
     deleteIndex: Function
-    isEditable: boolean
+    isEditable: boolean,
+    expandCollapse: Function,
+    isExpanded: boolean,
+    setExpansionLock: Function
 };
 
 export interface userHeadingProps extends userHeading {

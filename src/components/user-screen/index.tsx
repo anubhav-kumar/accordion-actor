@@ -37,12 +37,23 @@ const UserDetails = () => {
             ? (dt.first.includes(searchTerm) || dt.last.includes(searchTerm) || dt.description.includes(searchTerm))
             : true}
         );
-    
+    const [expansionLock, setExpansionLock] = useState(false);
+    const [expandedAccordionIndex, setExpandedAccordionIndex] = useState(0);
+    const expandCollapse = (dataIndex: number) => {
+        if (!expansionLock) {
+            if (expandedAccordionIndex === dataIndex) {
+                setExpandedAccordionIndex(-1);
+            } else {
+                setExpandedAccordionIndex(dataIndex);
+            }
+        }
+    }
+     
     return (
         <>
             <input onChange={event => {setSearchTerm(event.target.value)}} />
             <ConfirmAlert title={"Are you sure you wanna delete the User ?"} isOpen={isConfirmAlert} onConfirmFn={deleteIndex} onDenyFn={() => {setIsConfirmAlert(false)}} />
-            {filteredData.map((dt, idx) => {return <UserAccordion deleteIndex={openDeleteConfirmModal} isOpen={false} updateData={updateLocalState} key={`idx-${idx}`} {...dt} dataIndex={idx} />})}
+            {filteredData.map((dt, idx) => {return <UserAccordion setExpansionLock={setExpansionLock} expandCollapse={expandCollapse} isExpanded={idx === expandedAccordionIndex} deleteIndex={openDeleteConfirmModal} isOpen={false} updateData={updateLocalState} key={`idx-${idx}`} {...dt} dataIndex={idx} />})}
         </>
     )
     

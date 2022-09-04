@@ -14,5 +14,41 @@
     width: 25%;
     margin: 0px 25%;
     background-color: white;
+    border-radius: 8px;
     padding: 10px
+}
+
+.confirm-action {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.back {
+    background-color: red;
+    border-radius: 4px;
+    margin: 10px 0px;
+    padding: 5px 15px;
+    margin-right: 5px; 
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
+.confirm {
+    background-color: lightgreen;
+    border-radius: 4px;
+    margin: 10px 0px;
+    padding: 5px 15px;
+    cursor: pointer;
+    color: darkgreen;
+    border: none;
+    
+}
+
+@media only screen and (orientation: portrait) {
+    .confirm-content {
+        width: 90%;
+        margin: 0px 5%;
+    }
 }
